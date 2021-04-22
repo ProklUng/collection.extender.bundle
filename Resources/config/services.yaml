@@ -1,0 +1,79 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+    public: true
+
+  # Макрос pick - расширенный pluck.
+  Prokl\CollectionExtenderBundle\Services\Extenders\Pick: ~
+
+  # Reduce each collection item to the value found between a given start and end string.
+  Prokl\CollectionExtenderBundle\Services\Extenders\Beatween: ~
+
+  # Perform an operation on the collection's keys.
+  Prokl\CollectionExtenderBundle\Services\Extenders\TransformKeys: ~
+
+  Prokl\CollectionExtenderBundle\Services\Extenders\SortByExternalKeys: ~
+
+  # Sorts the Collection by its keys.
+  Prokl\CollectionExtenderBundle\Services\Extenders\KSort: ~
+
+  # Sorts the Collection by its keys in the reverse order
+  Prokl\CollectionExtenderBundle\Services\Extenders\KRSort: ~
+
+  # Recursively convert nested arrays into Laravel Collections.
+  Prokl\CollectionExtenderBundle\Services\Extenders\Recursive: ~
+
+  # Spatie macros pack.
+  Prokl\CollectionExtenderBundle\Services\Extenders\SpatiePack: ~
+
+  # Perform a regular expression search and replace.
+  Prokl\CollectionExtenderBundle\Services\Extenders\Replace: ~
+
+  # Sort the values in a collection by a datetime value.
+  Prokl\CollectionExtenderBundle\Services\Extenders\SortByDate: ~
+  # Sort the values in a collection by a datetime value in reversed order.
+  Prokl\CollectionExtenderBundle\Services\Extenders\SortByDateDesc: ~
+
+  # Pass collection to an anonymous function.
+  Prokl\CollectionExtenderBundle\Services\Extenders\Pipe: ~
+
+  # Ensure that every array / collection within a collection contains the same keys.
+  Prokl\CollectionExtenderBundle\Services\Extenders\NormalizeKeys: ~
+
+  # Macros to make it easier to produce and export data in CSV format
+  Prokl\CollectionExtenderBundle\Services\Extenders\Csv: ~
+
+  # Contains
+  Prokl\CollectionExtenderBundle\Services\Extenders\Contains: ~
+
+  # Any
+  Prokl\CollectionExtenderBundle\Services\Extenders\Any: ~
+
+  # FilterByField
+  Prokl\CollectionExtenderBundle\Services\Extenders\FilterByField: ~
+
+  # Новые макросы для коллекций Laravel.
+  extender.collection:
+    class: Prokl\CollectionExtenderBundle\Services\Extender
+    arguments:
+      - '@Prokl\CollectionExtenderBundle\Services\Extenders\Pick'
+      - '@Prokl\CollectionExtenderBundle\Services\Extenders\Beatween'
+      - '@Prokl\CollectionExtenderBundle\Services\Extenders\TransformKeys'
+      - '@Prokl\CollectionExtenderBundle\Services\Extenders\SortByExternalKeys'
+      - '@Prokl\CollectionExtenderBundle\Services\Extenders\KSort'
+      - '@Prokl\CollectionExtenderBundle\Services\Extenders\KRSort'
+      - '@Prokl\CollectionExtenderBundle\Services\Extenders\Recursive'
+      - '@Prokl\CollectionExtenderBundle\Services\Extenders\SpatiePack'
+      - '@Prokl\CollectionExtenderBundle\Services\Extenders\Replace'
+      - '@Prokl\CollectionExtenderBundle\Services\Extenders\SortByDate'
+      - '@Prokl\CollectionExtenderBundle\Services\Extenders\SortByDateDesc'
+      - '@Prokl\CollectionExtenderBundle\Services\Extenders\Pipe'
+      - '@Prokl\CollectionExtenderBundle\Services\Extenders\NormalizeKeys'
+      - '@Prokl\CollectionExtenderBundle\Services\Extenders\Csv'
+      - '@Prokl\CollectionExtenderBundle\Services\Extenders\Contains'
+      - '@Prokl\CollectionExtenderBundle\Services\Extenders\Any'
+      - '@Prokl\CollectionExtenderBundle\Services\Extenders\FilterByField'
+    tags: ['service.bootstrap']
+
+  Prokl\CollectionExtenderBundle\Services\Extender: '@extender.collection'
