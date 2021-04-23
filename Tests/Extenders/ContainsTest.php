@@ -20,6 +20,17 @@ class ContainsTest extends BaseTestCase
     protected $obTestObject;
 
     /**
+     * @inheritDoc
+     */
+    protected function setUp(): void
+    {
+        parent::setUp();
+
+        $extender = new Contains();
+        $extender->registerMacro();
+    }
+
+    /**
      * ContainsAll.
      *
      * @dataProvider dataProviderContainsAll

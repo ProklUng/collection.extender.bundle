@@ -16,6 +16,17 @@ use Prokl\TestingTools\Base\BaseTestCase;
 class AnyTest extends BaseTestCase
 {
     /**
+     * @inheritDoc
+     */
+    protected function setUp(): void
+    {
+        parent::setUp();
+
+        $extender = new Any();
+        $extender->registerMacro();
+    }
+
+    /**
      * Any.
      *
      * @dataProvider dataProviderFixtures

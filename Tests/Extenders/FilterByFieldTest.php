@@ -20,6 +20,17 @@ class FilterByFieldTest extends BaseTestCase
     protected $obTestObject;
 
     /**
+     * @inheritDoc
+     */
+    protected function setUp(): void
+    {
+        parent::setUp();
+
+        $extender = new FilterByField();
+        $extender->registerMacro();
+    }
+
+    /**
      * Ключи.
      *
      * @dataProvider dataProviderFixtures

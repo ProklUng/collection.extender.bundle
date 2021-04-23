@@ -20,6 +20,17 @@ class TransformKeysTest extends BaseTestCase
     protected $obTestObject;
 
     /**
+     * @inheritDoc
+     */
+    protected function setUp(): void
+    {
+        parent::setUp();
+
+        $extender = new TransformKeys();
+        $extender->registerMacro();
+    }
+
+    /**
      * TransformKeys.
      *
      * @dataProvider dataProviderFixtures

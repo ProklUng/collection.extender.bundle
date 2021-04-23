@@ -20,6 +20,17 @@ class SortByExternalKeysTest extends BaseTestCase
     protected $obTestObject;
 
     /**
+     * @inheritDoc
+     */
+    protected function setUp(): void
+    {
+        parent::setUp();
+
+        $extender = new SortByExternalKeys();
+        $extender->registerMacro();
+    }
+
+    /**
      * SortByExternalKeys. Массив коллекций.
      *
      * @dataProvider dataProviderFixtures

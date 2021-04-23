@@ -21,6 +21,17 @@ class RecursiveTest extends BaseTestCase
     protected $obTestObject;
 
     /**
+     * @inheritDoc
+     */
+    protected function setUp(): void
+    {
+        parent::setUp();
+
+        $extender = new Recursive();
+        $extender->registerMacro();
+    }
+
+    /**
      * Recursive.
      *
      * @dataProvider dataProviderFixtures
