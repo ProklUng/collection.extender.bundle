@@ -46,7 +46,7 @@ class FilterByFieldTest extends BaseTestCase
         $this->assertSame(
             $values['expected'],
             $result->toArray(),
-            'Error '.$values['key'].' - '.$values['value']
+            'Error '. $values['value']
         );
     }
 
